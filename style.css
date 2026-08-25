@@ -977,10 +977,15 @@ button {
    ========================================================= */
 
 .categories {
-    padding: 24px 4% 35px;
+    position: relative;
+
+    padding: 30px 4% 45px;
 
     background: #f8f5ef;
 }
+
+
+/* CATEGORY CONTAINER */
 
 .category-grid {
     max-width: 1100px;
@@ -992,18 +997,24 @@ button {
 
     background: #fffdf9;
 
-    border-radius: 20px;
+    border: 1px solid #eee5d7;
+    border-radius: 22px;
 
     overflow: hidden;
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.06);
+        0 12px 35px rgba(0, 0, 0, 0.06);
 }
 
-.category-item {
-    min-height: 145px;
 
-    padding: 20px 8px;
+/* CATEGORY ITEM */
+
+.category-item {
+    position: relative;
+
+    min-height: 155px;
+
+    padding: 22px 8px;
 
     display: flex;
     flex-direction: column;
@@ -1013,7 +1024,9 @@ button {
 
     text-align: center;
 
-    border-right: 1px solid #eee8de;
+    border-right: 1px solid #eee5d7;
+
+    background: #fffdf9;
 
     transition:
         background 0.3s ease,
@@ -1024,14 +1037,46 @@ button {
     border-right: none;
 }
 
+
+/* TOP GOLD LINE */
+
+.category-item::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 0;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background: #d6aa50;
+
+    transition: width 0.3s ease;
+}
+
+
+/* HOVER */
+
 .category-item:hover {
-    background: #faf3e5;
+    background: #fcf5e8;
+
     transform: translateY(-3px);
 }
 
+.category-item:hover::before {
+    width: 55px;
+}
+
+
+/* CATEGORY ICON */
+
 .category-icon {
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
 
     margin-bottom: 12px;
 
@@ -1039,27 +1084,157 @@ button {
     align-items: center;
     justify-content: center;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
-    background: #fbf2df;
+    background:
+        linear-gradient(
+            145deg,
+            #fff8e9,
+            #f5e5c4
+        );
 
-    font-size: 24px;
+    border: 1px solid #ead7ae;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+.category-item:hover .category-icon {
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* CATEGORY TITLE */
 
 .category-item h3 {
     font-family: "Playfair Display", serif;
 
     font-size: 16px;
     font-weight: 600;
+
+    color: #202020;
 }
+
+
+/* CATEGORY DESCRIPTION */
 
 .category-item p {
     margin-top: 5px;
 
-    color: #777;
+    color: #858585;
 
     font-size: 10px;
     line-height: 1.3;
+}
+
+
+/* =========================================================
+   CATEGORY TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category-item {
+        min-height: 145px;
+
+        border-bottom: 1px solid #eee5d7;
+    }
+
+    .category-item:nth-child(3),
+    .category-item:nth-child(6) {
+        border-right: none;
+    }
+
+    .category-item:nth-child(4),
+    .category-item:nth-child(5),
+    .category-item:nth-child(6) {
+        border-bottom: none;
+    }
+}
+
+
+/* =========================================================
+   CATEGORY MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .categories {
+        padding: 18px 15px 35px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        border-radius: 18px;
+    }
+
+    .category-item {
+        min-height: 130px;
+
+        padding: 17px 5px;
+    }
+
+    .category-icon {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 9px;
+
+        border-radius: 15px;
+
+        font-size: 21px;
+    }
+
+    .category-item h3 {
+        font-size: 14px;
+    }
+
+    .category-item p {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   CATEGORY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .category-item {
+        min-height: 118px;
+    }
+
+    .category-icon {
+        width: 43px;
+        height: 43px;
+
+        margin-bottom: 7px;
+
+        font-size: 19px;
+    }
+
+    .category-item h3 {
+        font-size: 13px;
+    }
+
+    .category-item p {
+        font-size: 8px;
+    }
 }
 
 
