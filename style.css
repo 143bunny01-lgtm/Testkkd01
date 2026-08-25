@@ -425,18 +425,17 @@ button {
 }
 
 .promote-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
 
     fill: none;
 
     stroke: currentColor;
-    stroke-width: 1.7;
+    stroke-width: 1.5;
 
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-
 
    
 .promote-text {
