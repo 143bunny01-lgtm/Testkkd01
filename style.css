@@ -2683,123 +2683,67 @@ footer {
     }
   }
 /* =========================================================
-   TRENDING MOBILE REFINEMENT
+   /* =========================================================
+   TRENDING CARD — CONSISTENT CONTENT ALIGNMENT
+   ========================================================= */
+
+.trend-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.trend-card img {
+    flex-shrink: 0;
+}
+
+.trend-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* FIXED TITLE AREA */
+
+.trend-content h3 {
+    min-height: 48px;
+
+    display: flex;
+    align-items: flex-start;
+
+    margin-top: 11px;
+}
+
+
+/* PUSH BOTTOM ROW TO SAME POSITION */
+
+.trend-bottom {
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 
 @media (max-width: 800px) {
 
-    .trending {
-        padding-top: 28px;
-        padding-bottom: 40px;
-    }
-
-    /* SECTION HEADER */
-
-    .trending .section-top {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        gap: 15px;
-
-        margin-bottom: 28px;
-    }
-
-    .trending .section-top h2 {
-        max-width: 270px;
-
-        margin: 0;
-
-        font-size: 34px;
-        line-height: 1.05;
-        letter-spacing: -0.5px;
-    }
-
-    .trending .section-label {
-        margin-bottom: 8px;
-
-        font-size: 10px;
-        letter-spacing: 1.8px;
-    }
-
-    /* VIEW ALL */
-
-    .trending .view-all {
-        flex-shrink: 0;
-
-        padding: 10px 16px;
-
-        border-radius: 25px;
-
-        font-size: 11px;
-        white-space: nowrap;
-    }
-
-
-    /* TRENDING GRID */
-
-    .trending-grid {
-        gap: 14px;
-    }
-
-
-    /* CARD */
-
-    .trend-card {
-        border-radius: 17px;
-
-        box-shadow:
-            0 5px 18px rgba(0, 0, 0, 0.055);
-    }
-
-
-    /* IMAGE */
-
-    .trend-card img {
-        height: 135px;
-    }
-
-
-    /* CONTENT */
-
     .trend-content {
-        padding: 14px 14px 13px;
+        padding: 14px;
     }
-
-
-    /* TAG */
-
-    .tag {
-        padding: 5px 9px;
-
-        font-size: 8px;
-        letter-spacing: 0.8px;
-    }
-
-
-    /* TITLE */
 
     .trend-content h3 {
         min-height: 52px;
 
         margin-top: 11px;
 
-        font-size: 16px;
-        line-height: 1.2;
+        display: flex;
+        align-items: flex-start;
     }
-
-
-    /* BOTTOM */
 
     .trend-bottom {
-        margin-top: 12px;
-
-        padding-top: 11px;
-    }
-
-    .trend-bottom span {
-        width: 30px;
-        height: 30px;
+        margin-top: auto;
     }
 }
 
@@ -2810,44 +2754,6 @@ footer {
 
 @media (max-width: 480px) {
 
-    .trending {
-        padding-top: 25px;
-    }
-
-    .trending .section-top {
-        align-items: flex-end;
-
-        margin-bottom: 24px;
-    }
-
-    .trending .section-top h2 {
-        max-width: 235px;
-
-        font-size: 29px;
-    }
-
-    .trending .section-label {
-        font-size: 9px;
-    }
-
-    .trending .view-all {
-        padding: 9px 13px;
-
-        font-size: 10px;
-    }
-
-    .trending-grid {
-        gap: 10px;
-    }
-
-    .trend-card {
-        border-radius: 15px;
-    }
-
-    .trend-card img {
-        height: 112px;
-    }
-
     .trend-content {
         padding: 11px;
     }
@@ -2855,21 +2761,6 @@ footer {
     .trend-content h3 {
         min-height: 48px;
 
-        font-size: 14px;
-        line-height: 1.2;
-    }
-
-    .trend-bottom {
         margin-top: 10px;
-        padding-top: 9px;
-
-        font-size: 9px;
-    }
-
-    .trend-bottom span {
-        width: 27px;
-        height: 27px;
-
-        font-size: 13px;
     }
 }
