@@ -1303,6 +1303,20 @@ button {
     background: #f8f5ef;
 }
 
+
+/* SECTION HEADER */
+
+.trending .section-top {
+    position: relative;
+}
+
+.trending .section-label {
+    color: #a77720;
+}
+
+
+/* TRENDING GRID */
+
 .trending-grid {
     max-width: 1100px;
 
@@ -1311,18 +1325,25 @@ button {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 }
 
+
+/* TREND CARD */
+
 .trend-card {
+    position: relative;
+
     overflow: hidden;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     background: #fffdf9;
 
+    border: 1px solid #eee5d7;
+
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.05);
+        0 7px 25px rgba(0, 0, 0, 0.05);
 
     transition:
         transform 0.3s ease,
@@ -1330,38 +1351,81 @@ button {
 }
 
 .trend-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.09);
+        0 15px 35px rgba(0, 0, 0, 0.10);
 }
+
+
+/* CARD IMAGE */
 
 .trend-card img {
     width: 100%;
-    height: 155px;
+    height: 170px;
 
     display: block;
 
     object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
 }
 
+.trend-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* IMAGE WRAPPER EFFECT */
+
+.trend-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 170px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.08)
+        );
+}
+
+
+/* TREND CONTENT */
+
 .trend-content {
-    padding: 14px;
+    padding: 16px;
 }
 
 
 /* TAG */
 
 .tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 
-    padding: 4px 8px;
+    padding: 5px 9px;
 
-    border-radius: 10px;
+    border-radius: 20px;
 
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
+
+    letter-spacing: 0.7px;
 }
+
+
+/* TAG COLORS */
 
 .food-tag {
     background: #fff0e5;
@@ -1384,44 +1448,185 @@ button {
 }
 
 
-/* TREND TITLE */
+/* CARD TITLE */
 
 .trend-content h3 {
-    margin-top: 9px;
+    min-height: 42px;
+
+    margin-top: 10px;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 600;
+
     line-height: 1.2;
+
+    color: #202020;
 }
 
 
-/* TREND BOTTOM */
+/* CARD FOOTER */
 
 .trend-bottom {
-    margin-top: 20px;
+    margin-top: 22px;
+
+    padding-top: 12px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    color: #777;
+    border-top: 1px solid #eee8de;
 
-    font-size: 11px;
+    color: #858585;
+
+    font-size: 10px;
 }
 
+
+/* ARROW */
+
 .trend-bottom span {
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #ddd;
+    border: 1px solid #ddd5c8;
     border-radius: 50%;
 
-    color: #111;
+    background: #fff;
+
+    color: #222;
+
+    font-size: 15px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.trend-card:hover .trend-bottom span {
+    background: #171717;
+    color: #fff;
+
+    border-color: #171717;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TRENDING TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+    .trend-card img {
+        height: 175px;
+    }
+}
+
+
+/* =========================================================
+   TRENDING MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .trend-card {
+        border-radius: 15px;
+    }
+
+    .trend-card img {
+        height: 125px;
+    }
+
+    .trend-content {
+        padding: 12px;
+    }
+
+    .trend-content h3 {
+        min-height: 38px;
+
+        margin-top: 8px;
+
+        font-size: 15px;
+    }
+
+    .trend-bottom {
+        margin-top: 15px;
+
+        padding-top: 10px;
+    }
+
+    .trend-bottom span {
+        width: 28px;
+        height: 28px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   TRENDING SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .trending-grid {
+        gap: 10px;
+    }
+
+    .trend-card {
+        border-radius: 13px;
+    }
+
+    .trend-card img {
+        height: 105px;
+    }
+
+    .trend-content {
+        padding: 10px;
+    }
+
+    .tag {
+        padding: 4px 7px;
+
+        font-size: 7px;
+    }
+
+    .trend-content h3 {
+        min-height: 34px;
+
+        font-size: 13px;
+    }
+
+    .trend-bottom {
+        font-size: 9px;
+    }
+
+    .trend-bottom span {
+        width: 26px;
+        height: 26px;
+    }
 }
 
 
