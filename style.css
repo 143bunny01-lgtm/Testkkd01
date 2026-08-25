@@ -1635,45 +1635,109 @@ button {
    ========================================================= */
 
 .promote-section {
+    position: relative;
+
     max-width: 1100px;
 
-    margin: 20px auto 60px;
+    margin: 20px auto 65px;
 
-    padding: 40px;
+    padding: 48px;
 
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
 
-    gap: 40px;
+    gap: 45px;
 
-    border-radius: 20px;
+    overflow: hidden;
 
-    background: #151515;
+    border: 1px solid rgba(229, 189, 104, 0.25);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #292929 0%,
+            #171717 45%,
+            #101010 100%
+        );
 
     color: #fff;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
 }
 
 
-/* PROMOTION INTRO */
+/* DECORATIVE GOLD CIRCLE */
+
+.promote-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -130px;
+    top: -120px;
+
+    border: 1px solid rgba(229, 189, 104, 0.16);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* SECOND DECORATION */
+
+.promote-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 30px;
+    bottom: -120px;
+
+    border: 1px solid rgba(229, 189, 104, 0.10);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROMOTION INTRO
+   ========================================================= */
+
+.promote-intro {
+    position: relative;
+    z-index: 2;
+}
 
 .promote-intro > span {
-    color: #d8ac4f;
+    display: inline-flex;
+    align-items: center;
 
-    font-size: 11px;
+    color: #e5bd68;
+
+    font-size: 10px;
     font-weight: 700;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .promote-intro h2 {
-    margin-top: 12px;
+    margin-top: 14px;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 500;
 
-    line-height: 1.15;
+    line-height: 1.12;
 }
 
 .promote-intro strong {
@@ -1681,29 +1745,30 @@ button {
 }
 
 .promote-intro p {
-    max-width: 430px;
+    max-width: 440px;
 
-    margin-top: 12px;
+    margin-top: 14px;
 
-    color: #bbb;
+    color: #bdbdbd;
 
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
-/* GOLD BUTTON */
+/* =========================================================
+   PROMOTE BUTTON
+   ========================================================= */
 
 .gold-button {
     display: inline-flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 
-    margin-top: 18px;
+    margin-top: 20px;
+    padding: 12px 19px;
 
-    padding: 11px 18px;
-
-    border-radius: 22px;
+    border-radius: 25px;
 
     background: #e5bd68;
     color: #171717;
@@ -1711,17 +1776,34 @@ button {
     font-size: 11px;
     font-weight: 700;
 
-    transition: 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .gold-button:hover {
     background: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gold-button span {
+    font-size: 15px;
 }
 
 
-/* PROMOTION STATS */
+/* =========================================================
+   PROMOTION STATS
+   ========================================================= */
 
 .promote-stats {
+    position: relative;
+    z-index: 2;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -1729,13 +1811,31 @@ button {
 }
 
 .promote-stats div {
+    min-height: 130px;
+
     display: flex;
     flex-direction: column;
 
     align-items: center;
     justify-content: center;
 
-    border-left: 1px solid #333;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.promote-stats div:hover {
+    background: rgba(229, 189, 104, 0.08);
+
+    border-color: rgba(229, 189, 104, 0.25);
+
+    transform: translateY(-3px);
 }
 
 .promote-stats strong {
@@ -1743,17 +1843,121 @@ button {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 25px;
+    font-size: 26px;
 }
 
 .promote-stats span {
-    margin-top: 5px;
+    margin-top: 6px;
 
     color: #aaa;
 
     font-size: 10px;
+
+    text-align: center;
 }
 
+
+/* =========================================================
+   PROMOTION TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .promote-section {
+        margin-left: 4%;
+        margin-right: 4%;
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 38px;
+
+        gap: 30px;
+    }
+
+    .promote-intro h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================================================
+   PROMOTION MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .promote-section {
+        margin: 10px 15px 45px;
+
+        grid-template-columns: 1fr;
+
+        padding: 32px 22px;
+
+        gap: 30px;
+
+        border-radius: 20px;
+    }
+
+    .promote-intro h2 {
+        font-size: 29px;
+    }
+
+    .promote-intro p {
+        font-size: 12px;
+    }
+
+    .promote-stats {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .promote-stats div {
+        min-height: 105px;
+    }
+
+    .promote-stats strong {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================================
+   PROMOTION SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .promote-section {
+        padding: 28px 18px;
+    }
+
+    .promote-intro h2 {
+        font-size: 26px;
+    }
+
+    .promote-intro > span {
+        font-size: 8px;
+    }
+
+    .promote-intro p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .promote-stats div {
+        min-height: 95px;
+    }
+
+    .promote-stats strong {
+        font-size: 21px;
+    }
+
+    .promote-stats span {
+        font-size: 9px;
+    }
+}
+    
 
 /* =========================================================
    11. FOOTER
@@ -1761,16 +1965,17 @@ button {
 
 footer {
     background: #fffdf9;
-
     border-top: 1px solid #e8e1d6;
 }
+
+
+/* FOOTER MAIN */
 
 .footer-main {
     max-width: 1100px;
 
     margin: auto;
-
-    padding: 50px 4%;
+    padding: 55px 4% 45px;
 
     display: grid;
     grid-template-columns: 1.4fr repeat(4, 1fr);
@@ -1779,54 +1984,66 @@ footer {
 }
 
 
-/* FOOTER BRAND */
+/* BRAND */
 
 .footer-brand img {
-    width: 130px;
+    width: 135px;
     height: auto;
 
     display: block;
 }
 
 .footer-brand p {
-    margin-top: 15px;
+    max-width: 220px;
+
+    margin-top: 14px;
 
     color: #777;
 
     font-size: 12px;
+    line-height: 1.6;
 }
 
 
-/* SOCIALS */
+/* SOCIAL LINKS */
 
 .socials {
     display: flex;
-
-    gap: 8px;
+    gap: 9px;
 
     margin-top: 18px;
 }
 
 .socials a {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #ccc;
+    border: 1px solid #d8d0c3;
     border-radius: 50%;
+
+    background: #fff;
+
+    color: #333;
 
     font-size: 13px;
 
-    transition: 0.25s ease;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .socials a:hover {
     background: #171717;
     color: #fff;
+
     border-color: #171717;
+
+    transform: translateY(-2px);
 }
 
 
@@ -1840,11 +2057,14 @@ footer {
 }
 
 .footer-column h3 {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #202020;
 }
 
 .footer-column a,
@@ -1852,22 +2072,25 @@ footer {
     color: #777;
 
     font-size: 11px;
-    line-height: 1.5;
+    line-height: 1.6;
 
     transition: color 0.25s ease;
 }
 
 .footer-column a:hover {
-    color: #bd8a2c;
+    color: #b98224;
 }
 
 
 /* FOOTER BOTTOM */
 
 .footer-bottom {
+    min-height: 52px;
+
     padding: 15px 4%;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     border-top: 1px solid #e5dfd5;
@@ -1875,6 +2098,83 @@ footer {
     color: #777;
 
     font-size: 10px;
+}
+
+
+/* =========================================================
+   FOOTER TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   FOOTER MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 30px;
+
+        padding: 42px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        padding: 14px 20px;
+
+        flex-direction: column;
+
+        gap: 7px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   FOOTER SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .footer-main {
+        gap: 25px;
+    }
+
+    .footer-brand img {
+        width: 120px;
+    }
+
+    .footer-column h3 {
+        font-size: 14px;
+    }
+
+    .footer-column a,
+    .footer-column p {
+        font-size: 10px;
+    }
+
+    .footer-bottom {
+        font-size: 9px;
+    }
 }
 
 
