@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kakinada Diaries — Everything Kakinada. One Place.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+          <path d="M4 20 C4 12, 12 6, 20 6 C28 6, 34 10, 36 16 L28 16 C26 12, 23 10, 20 10 C14 10, 9 14, 9 20 C9 26, 14 30, 20 30 C23 30, 26 28, 28 24 L36 24 C34 30, 28 34, 20 34 C12 34, 4 28, 4 20 Z" fill="#e63946"/>
+          <circle cx="14" cy="18" r="1.6" fill="#111"/>
+        </svg>
+      </div>
+      <span class="logo-text">Kakinada<br><span class="logo-text-sub">Diaries</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#" class="active">Home</a>
+      <a href="#businesses">Businesses</a>
+      <a href="#places">Places</a>
+      <a href="#food">Food</a>
+      <a href="#events">Events</a>
+      <a href="#stories">Stories</a>
+      <a href="#services">Services</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="#promote" class="btn-primary desktop-only">Promote Your Business</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search places, food, events…" id="searchInput" autocomplete="off">
+    <button id="searchClose" aria-label="Close search">&times;</button>
+  </div>
+  <div class="search-hint">Try "beach", "cafe", or "music night"</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">✦ TOP DESTINATIONS</div>
+  <h1 class="hero-title">Explore the Best of Kakinada</h1>
+  <p class="hero-sub">Beautiful places, unforgettable experiences</p>
+
+  <div class="carousel-wrap">
+    <button class="carousel-arrow left" id="prevBtn" aria-label="Previous">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
+    <div class="carousel-track" id="carouselTrack">
+      <!-- slides injected by JS -->
+    </div>
+
+    <button class="carousel-arrow right" id="nextBtn" aria-label="Next">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
+<!-- QUICK CATEGORIES -->
+<section class="categories">
+  <div class="category-card">
+    <div class="cat-icon">🏖️</div>
+    <div class="cat-title">Beaches</div>
+    <div class="cat-sub">Sun, Sand &amp; Sea</div>
+  </div>
+  <div class="category-card">
+    <div class="cat-icon">🍴</div>
+    <div class="cat-title">Food</div>
+    <div class="cat-sub">Tasty &amp; Delicious</div>
+  </div>
+  <div class="category-card">
+    <div class="cat-icon">📅</div>
+    <div class="cat-title">Events</div>
+    <div class="cat-sub">What's Happening</div>
+  </div>
+  <div class="category-card">
+    <div class="cat-icon">📍</div>
+    <div class="cat-title">Places</div>
+    <div class="cat-sub">Explore Around</div>
+  </div>
+  <div class="category-card">
+    <div class="cat-icon">🛍️</div>
+    <div class="cat-title">Businesses</div>
+    <div class="cat-sub">Local &amp; Trusted</div>
+  </div>
+  <div class="category-card">
+    <div class="cat-icon">✦</div>
+    <div class="cat-title">Services</div>
+    <div class="cat-sub">Local Services</div>
+  </div>
+</section>
+
+<!-- TRENDING -->
+<section class="trending" id="stories">
+  <div class="trending-head">
+    <div>
+      <div class="trending-eyebrow">🔥 TRENDING IN KAKINADA</div>
+      <h2>What's happening now</h2>
+    </div>
+    <a href="#" class="btn-pill">View All →</a>
+  </div>
+
+  <div class="trending-grid">
+    <article class="trend-card">
+      <div class="trend-img" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=60')"></div>
+      <div class="trend-body">
+        <span class="tag tag-food">FOOD</span>
+        <h3>New Cafe Opened Near Kakinada</h3>
+        <div class="trend-foot"><span>Trending</span><span class="foot-arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="trend-card">
+      <div class="trend-img" style="background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=60')"></div>
+      <div class="trend-body">
+        <span class="tag tag-event">EVENT</span>
+        <h3>Music Night in Kakinada</h3>
+        <div class="trend-foot"><span>Upcoming</span><span class="foot-arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="trend-card">
+      <div class="trend-img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=60')"></div>
+      <div class="trend-body">
+        <span class="tag tag-place">PLACE</span>
+        <h3>Coringa Boat Ride Experience</h3>
+        <div class="trend-foot"><span>Explore</span><span class="foot-arrow">→</span></div>
+      </div>
+    </article>
+
+    <article class="trend-card">
+      <div class="trend-img" style="background-image:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=60')"></div>
+      <div class="trend-body">
+        <span class="tag tag-biz">BUSINESS</span>
+        <h3>Discover Local Businesses</h3>
+        <div class="trend-foot"><span>Discover</span><span class="foot-arrow">→</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PROMOTE -->
+<section class="promote" id="promote">
+  <div class="promote-left">
+    <div class="promote-eyebrow">🚀 GROW YOUR BUSINESS IN KAKINADA</div>
+    <h2>Promote Your Business <br><span>to Kakinada</span></h2>
+    <p>Get featured on Kakinada Diaries and reach local people looking for businesses and services.</p>
+    <a href="#" class="btn-primary">Promote Now →</a>
+  </div>
+  <div class="promote-stats">
+    <div class="stat-box"><div class="stat-num">Local</div><div class="stat-label">Audience</div></div>
+    <div class="stat-box"><div class="stat-num">High</div><div class="stat-label">Visibility</div></div>
+    <div class="stat-box"><div class="stat-num">More</div><div class="stat-label">Customers</div></div>
+    <div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Local Focus</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-mark small">
+        <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+          <path d="M4 20 C4 12, 12 6, 20 6 C28 6, 34 10, 36 16 L28 16 C26 12, 23 10, 20 10 C14 10, 9 14, 9 20 C9 26, 14 30, 20 30 C23 30, 26 28, 28 24 L36 24 C34 30, 28 34, 20 34 C12 34, 4 28, 4 20 Z" fill="#e63946"/>
+        </svg>
+      </div>
+      <p>Everything Kakinada. One Place.</p>
+      <div class="social-row">
+        <a href="#" class="icon-btn" aria-label="Site"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Mic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Play"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg></a>
+        <a href="#" class="icon-btn" aria-label="Camera"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#businesses">Businesses</a>
+      <a href="#places">Places</a>
+      <a href="#food">Food</a>
+      <a href="#events">Events</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>For Businesses</h4>
+      <a href="#promote">Promote Your Business</a>
+      <a href="#">Add Business</a>
+      <a href="#">Business Login</a>
+      <a href="#">Pricing</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p class="contact-line">☏ +91 94901 20103</p>
+      <p class="contact-line">✉ hello@kakinadadiaries.com</p>
+      <p class="contact-line">✦ Kakinada, Andhra Pradesh</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Kakinada Diaries. All Rights Reserved.</span>
+    <span>Made with ❤ for Kakinada</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
