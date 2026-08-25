@@ -1,0 +1,1832 @@
+/* =========================================================
+   KAKINADA DIARIES
+   MAIN STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. GOOGLE FONTS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   02. GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f8f5ef;
+    color: #171717;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   03. HEADER
+   ========================================================= */
+
+.header {
+    width: 100%;
+    height: 76px;
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fffdf9;
+    border-bottom: 1px solid #eee7dc;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-area img {
+    width: 145px;
+    height: 58px;
+
+    object-fit: contain;
+    display: block;
+
+    border-radius: 5px;
+}
+
+
+/* DESKTOP NAVIGATION */
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.desktop-nav a {
+    position: relative;
+
+    padding: 29px 0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #333;
+
+    transition: color 0.25s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #bd8a2c;
+}
+
+.desktop-nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+
+    height: 2px;
+
+    background: #d4a646;
+}
+
+
+/* HEADER ACTIONS */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    color: #222;
+
+    transition: 0.25s ease;
+}
+
+.icon-btn:hover {
+    color: #bd8a2c;
+}
+
+
+/* PROMOTE BUTTON */
+
+.promote-btn {
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background: #151515;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.promote-btn:hover {
+    background: #d6aa50;
+    color: #111;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #171717;
+    color: #fff;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   04. MOBILE MENU
+   ========================================================= */
+
+.mobile-menu {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    flex-direction: column;
+
+    padding: 25px 22px 30px;
+
+    overflow-y: auto;
+
+    background: #f8f5ee;
+    color: #111;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-menu {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #111;
+    color: #e7b94d;
+
+    font-size: 25px;
+    font-weight: 300;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MOBILE BRAND */
+
+.mobile-brand {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-brand img {
+    width: 145px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 4px;
+}
+
+.mobile-brand span {
+    margin-left: 5px;
+
+    font-size: 8px;
+    letter-spacing: 1.7px;
+
+    color: #9b6b20;
+}
+
+
+/* MOBILE TITLE */
+
+.mobile-menu-title {
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+.mobile-menu-title small {
+    display: block;
+
+    font-family: cursive;
+    font-size: 28px;
+
+    line-height: 0.9;
+
+    color: #c9942e;
+}
+
+.mobile-menu-title h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+
+    line-height: 1;
+
+    color: #111;
+}
+
+.title-line {
+    width: 105px;
+    height: 3px;
+
+    margin-top: 10px;
+
+    background: #c9942e;
+
+    border-radius: 10px;
+}
+
+
+/* MOBILE NAVIGATION */
+
+.mobile-navigation {
+    width: 100%;
+}
+
+.mobile-navigation a {
+    width: 100%;
+    min-height: 58px;
+
+    display: grid;
+    grid-template-columns: 45px 1fr 25px;
+
+    align-items: center;
+
+    border-top: 1px solid #dfd2b9;
+
+    color: #111;
+
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.mobile-navigation a:last-child {
+    border-bottom: 1px solid #dfd2b9;
+}
+
+.mobile-navigation a:hover {
+    padding-left: 7px;
+    color: #c9942e;
+}
+
+.menu-icon {
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.mobile-navigation b {
+    font-family: sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+
+    color: #c9942e;
+
+    text-align: right;
+}
+
+
+/* MOBILE PROMOTION */
+
+.mobile-promote {
+    display: grid;
+    grid-template-columns: 50px 1fr 40px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+    padding: 13px;
+
+    border: 1px solid #dcb66b;
+    border-radius: 15px;
+
+    background: #fffaf0;
+
+    color: #111;
+}
+
+.promote-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f7e4b6;
+
+    font-size: 21px;
+}
+
+.promote-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.promote-text strong {
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.promote-text span {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #666;
+}
+
+.promote-arrow {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e3b34d;
+    color: #111;
+
+    font-size: 20px;
+}
+
+
+/* MOBILE SOCIAL */
+
+.mobile-connect {
+    margin-top: 25px;
+    padding-bottom: 15px;
+}
+
+.connect-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #76511d;
+}
+
+.connect-title span {
+    flex: 1;
+    height: 1px;
+
+    background: #dcb66b;
+}
+
+.connect-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+.connect-links a {
+    font-size: 11px;
+    color: #222;
+
+    transition: 0.25s ease;
+}
+
+.connect-links a:hover {
+    color: #c9942e;
+}
+
+
+/* =========================================================
+   05. HERO SECTION
+   ========================================================= */
+
+.destination-hero {
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 55px 4% 40px;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #303030 0%,
+            #171717 55%,
+            #101010 100%
+        );
+
+    color: #fff;
+
+    overflow: hidden;
+}
+
+
+/* DECORATION */
+
+.hero-decoration {
+    position: absolute;
+
+    right: -120px;
+    top: 20px;
+
+    width: 400px;
+    height: 550px;
+
+    border: 1px solid rgba(211, 166, 70, 0.15);
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+
+    pointer-events: none;
+}
+
+
+/* HERO HEADING */
+
+.hero-heading {
+    position: relative;
+    z-index: 5;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.eyebrow {
+    color: #e1b75b;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.hero-heading h1 {
+    margin-top: 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+.hero-heading p {
+    margin-top: 8px;
+
+    color: #d7d7d7;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   06. DESTINATION CAROUSEL
+   ========================================================= */
+
+.carousel-wrapper {
+    position: relative;
+
+    max-width: 1100px;
+    height: 365px;
+
+    margin: 28px auto 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.destination-carousel {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* DESTINATION CARD */
+
+.destination-card {
+    position: absolute;
+
+    width: 55%;
+    height: 365px;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%) scale(0.72);
+
+    opacity: 0.35;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: #222;
+
+    filter: brightness(0.6);
+
+    transition:
+        transform 0.55s ease,
+        left 0.55s ease,
+        opacity 0.55s ease,
+        filter 0.55s ease;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* CARD OVERLAY */
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05) 20%,
+            rgba(0, 0, 0, 0.88) 100%
+        );
+}
+
+
+/* CARD NUMBER */
+
+.destination-number {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.88);
+    color: #222;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* CARD CONTENT */
+
+.destination-info {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 25px;
+}
+
+.destination-info h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+.destination-info p {
+    max-width: 380px;
+
+    margin-top: 6px;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+
+/* DESTINATION BUTTON */
+
+.destination-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 14px;
+    padding: 10px 16px;
+
+    border-radius: 25px;
+
+    background: #e5bd68;
+    color: #171717;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.destination-button:hover {
+    background: #fff;
+}
+
+.destination-button span {
+    font-size: 15px;
+}
+
+
+/* ACTIVE CARD */
+
+.destination-card.active {
+    left: 50%;
+
+    transform: translateX(-50%) scale(1);
+
+    opacity: 1;
+
+    z-index: 5;
+
+    filter: brightness(1);
+
+    border-color: rgba(229, 189, 104, 0.7);
+}
+
+
+/* LEFT CARD */
+
+.destination-card.left-card {
+    left: 15%;
+
+    transform: translateX(-50%) scale(0.72);
+
+    opacity: 0.65;
+
+    z-index: 3;
+}
+
+
+/* RIGHT CARD */
+
+.destination-card.right-card {
+    left: 85%;
+
+    transform: translateX(-50%) scale(0.72);
+
+    opacity: 0.65;
+
+    z-index: 3;
+}
+
+
+/* HIDDEN CARD */
+
+.destination-card.hidden-card {
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* CAROUSEL ARROWS */
+
+.carousel-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    color: #fff;
+
+    font-size: 20px;
+
+    backdrop-filter: blur(5px);
+
+    transition: 0.25s ease;
+}
+
+.carousel-arrow:hover {
+    background: #e5bd68;
+    color: #111;
+
+    border-color: #e5bd68;
+}
+
+.carousel-arrow.left {
+    left: -22px;
+}
+
+.carousel-arrow.right {
+    right: -22px;
+}
+
+
+/* =========================================================
+   07. CATEGORIES
+   ========================================================= */
+
+.categories {
+    padding: 24px 4% 35px;
+
+    background: #f8f5ef;
+}
+
+.category-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    background: #fffdf9;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.06);
+}
+
+.category-item {
+    min-height: 145px;
+
+    padding: 20px 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-right: 1px solid #eee8de;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.category-item:last-child {
+    border-right: none;
+}
+
+.category-item:hover {
+    background: #faf3e5;
+    transform: translateY(-3px);
+}
+
+.category-icon {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #fbf2df;
+
+    font-size: 24px;
+}
+
+.category-item h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.category-item p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   08. GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 60px 4%;
+}
+
+.section-top {
+    max-width: 1100px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.section-top h2 {
+    margin-top: 8px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+.view-all {
+    padding: 10px 18px;
+
+    border: 1px solid #cbb98f;
+    border-radius: 25px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.25s ease;
+}
+
+.view-all:hover {
+    background: #171717;
+    color: #fff;
+    border-color: #171717;
+}
+
+
+/* =========================================================
+   09. TRENDING
+   ========================================================= */
+
+.trending {
+    background: #f8f5ef;
+}
+
+.trending-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.trend-card {
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #fffdf9;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.trend-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+.trend-card img {
+    width: 100%;
+    height: 155px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.trend-content {
+    padding: 14px;
+}
+
+
+/* TAG */
+
+.tag {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border-radius: 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.food-tag {
+    background: #fff0e5;
+    color: #d56c27;
+}
+
+.event-tag {
+    background: #ffe5ec;
+    color: #d73764;
+}
+
+.place-tag {
+    background: #e7f0ff;
+    color: #3981d0;
+}
+
+.business-tag {
+    background: #e5f4e8;
+    color: #39834c;
+}
+
+
+/* TREND TITLE */
+
+.trend-content h3 {
+    margin-top: 9px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+
+/* TREND BOTTOM */
+
+.trend-bottom {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.trend-bottom span {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   10. PROMOTE YOUR BUSINESS
+   ========================================================= */
+
+.promote-section {
+    max-width: 1100px;
+
+    margin: 20px auto 60px;
+
+    padding: 40px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 40px;
+
+    border-radius: 20px;
+
+    background: #151515;
+
+    color: #fff;
+}
+
+
+/* PROMOTION INTRO */
+
+.promote-intro > span {
+    color: #d8ac4f;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.promote-intro h2 {
+    margin-top: 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+    font-weight: 500;
+
+    line-height: 1.15;
+}
+
+.promote-intro strong {
+    color: #e5bd68;
+}
+
+.promote-intro p {
+    max-width: 430px;
+
+    margin-top: 12px;
+
+    color: #bbb;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* GOLD BUTTON */
+
+.gold-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 18px;
+
+    padding: 11px 18px;
+
+    border-radius: 22px;
+
+    background: #e5bd68;
+    color: #171717;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.gold-button:hover {
+    background: #fff;
+}
+
+
+/* PROMOTION STATS */
+
+.promote-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.promote-stats div {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-left: 1px solid #333;
+}
+
+.promote-stats strong {
+    color: #e5bd68;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+}
+
+.promote-stats span {
+    margin-top: 5px;
+
+    color: #aaa;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+footer {
+    background: #fffdf9;
+
+    border-top: 1px solid #e8e1d6;
+}
+
+.footer-main {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 50px 4%;
+
+    display: grid;
+    grid-template-columns: 1.4fr repeat(4, 1fr);
+
+    gap: 35px;
+}
+
+
+/* FOOTER BRAND */
+
+.footer-brand img {
+    width: 130px;
+    height: auto;
+
+    display: block;
+}
+
+.footer-brand p {
+    margin-top: 15px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* SOCIALS */
+
+.socials {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.socials a {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ccc;
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+.socials a:hover {
+    background: #171717;
+    color: #fff;
+    border-color: #171717;
+}
+
+
+/* FOOTER COLUMNS */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-column h3 {
+    margin-bottom: 5px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 15px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #777;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    transition: color 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #bd8a2c;
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    padding: 15px 4%;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #e5dfd5;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   12. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .desktop-nav {
+        gap: 18px;
+    }
+
+    .desktop-nav a {
+        font-size: 12px;
+    }
+
+    .promote-btn {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category-item {
+        border-bottom: 1px solid #eee8de;
+    }
+
+    .category-item:nth-child(3),
+    .category-item:nth-child(6) {
+        border-right: none;
+    }
+
+    .category-item:nth-child(4),
+    .category-item:nth-child(5),
+    .category-item:nth-child(6) {
+        border-bottom: none;
+    }
+
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   13. MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* ================= HEADER ================= */
+
+    .header {
+        height: 68px;
+        padding: 0 15px;
+    }
+
+    .logo-area img {
+        width: 125px;
+        height: 52px;
+    }
+
+    .desktop-nav,
+    .header-actions .icon-btn,
+    .header-actions .promote-btn {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .destination-hero {
+        min-height: 0;
+
+        padding: 38px 0 35px;
+    }
+
+    .hero-heading {
+        padding: 0 20px;
+    }
+
+    .hero-heading h1 {
+        font-size: 34px;
+        line-height: 1.05;
+    }
+
+    .hero-heading p {
+        font-size: 13px;
+    }
+
+
+    /* ================= CAROUSEL ================= */
+
+    .carousel-wrapper {
+        height: 325px;
+
+        margin-top: 20px;
+    }
+
+    .destination-card {
+        width: 68%;
+        height: 300px;
+    }
+
+    .destination-card.left-card {
+        left: 12%;
+
+        transform:
+            translateX(-50%)
+            scale(0.72);
+
+        opacity: 0.4;
+    }
+
+    .destination-card.right-card {
+        left: 88%;
+
+        transform:
+            translateX(-50%)
+            scale(0.72);
+
+        opacity: 0.4;
+    }
+
+    .destination-card.active {
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    .destination-info {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .destination-info h2 {
+        font-size: 25px;
+    }
+
+    .destination-info p {
+        font-size: 12px;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+    }
+
+    .carousel-arrow.left {
+        left: 8px;
+    }
+
+    .carousel-arrow.right {
+        right: 8px;
+    }
+
+
+    /* ================= CATEGORIES ================= */
+
+    .categories {
+        padding: 15px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        border-radius: 15px;
+    }
+
+    .category-item {
+        min-height: 125px;
+
+        padding: 17px 5px;
+    }
+
+    .category-icon {
+        width: 43px;
+        height: 43px;
+
+        margin-bottom: 8px;
+
+        font-size: 20px;
+    }
+
+    .category-item h3 {
+        font-size: 15px;
+    }
+
+    .category-item p {
+        font-size: 9px;
+    }
+
+
+    /* ================= GENERAL SECTION ================= */
+
+    .section {
+        padding: 45px 15px;
+    }
+
+    .section-top {
+        align-items: center;
+    }
+
+    .section-top h2 {
+        font-size: 26px;
+    }
+
+    .view-all {
+        padding: 8px 13px;
+    }
+
+
+    /* ================= TRENDING ================= */
+
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .trend-card img {
+        height: 120px;
+    }
+
+    .trend-content {
+        padding: 11px;
+    }
+
+    .trend-content h3 {
+        font-size: 15px;
+    }
+
+    .trend-bottom {
+        margin-top: 15px;
+    }
+
+
+    /* ================= PROMOTION ================= */
+
+    .promote-section {
+        margin: 10px 15px 40px;
+
+        grid-template-columns: 1fr;
+
+        padding: 30px 22px;
+
+        gap: 30px;
+    }
+
+    .promote-intro h2 {
+        font-size: 28px;
+    }
+
+    .promote-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promote-stats div {
+        padding-top: 15px;
+
+        border-left: none;
+        border-top: 1px solid #333;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 30px;
+
+        padding: 40px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   14. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .mobile-menu {
+        padding: 20px 16px 25px;
+    }
+
+    .close-menu {
+        width: 36px;
+        height: 36px;
+
+        top: 14px;
+        right: 14px;
+
+        font-size: 20px;
+    }
+
+    .mobile-brand img {
+        width: 110px;
+    }
+
+    .mobile-brand span {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .mobile-menu-title {
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+
+    .mobile-menu-title small {
+        font-size: 22px;
+    }
+
+    .mobile-menu-title h2 {
+        font-size: 32px;
+    }
+
+    .title-line {
+        width: 80px;
+        height: 2px;
+
+        margin-top: 6px;
+    }
+
+    .mobile-navigation a {
+        min-height: 44px;
+
+        grid-template-columns: 40px 1fr 20px;
+
+        font-size: 15px;
+    }
+
+    .menu-icon {
+        font-size: 20px;
+    }
+
+    .mobile-navigation b {
+        font-size: 18px;
+    }
+
+    .mobile-promote {
+        grid-template-columns: 40px 1fr 34px;
+
+        gap: 6px;
+
+        margin-top: 16px;
+
+        padding: 10px 12px;
+
+        border-radius: 12px;
+    }
+
+    .promote-icon {
+        width: 36px;
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+    .promote-text strong {
+        font-size: 13px;
+    }
+
+    .promote-text span {
+        font-size: 9px;
+    }
+
+    .promote-arrow {
+        width: 32px;
+        height: 32px;
+
+        font-size: 18px;
+    }
+
+    .mobile-connect {
+        margin-top: 20px;
+    }
+
+    .connect-title {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .connect-links a {
+        font-size: 9px;
+    }
+
+    .hero-heading h1 {
+        font-size: 30px;
+    }
+
+    .destination-card {
+        width: 72%;
+    }
+
+    .destination-info h2 {
+        font-size: 22px;
+    }
+
+    .destination-info p {
+        font-size: 11px;
+    }
+
+    .category-item {
+        min-height: 115px;
+    }
+
+    .category-item h3 {
+        font-size: 13px;
+    }
+
+    .category-item p {
+        font-size: 8px;
+    }
+
+    .trending-grid {
+        gap: 10px;
+    }
+
+    .trend-card img {
+        height: 105px;
+    }
+
+    .trend-content h3 {
+        font-size: 13px;
+    }
+
+    .tag {
+        font-size: 8px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+    }
+  }
